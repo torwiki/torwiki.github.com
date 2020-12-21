@@ -1,0 +1,23 @@
+name: Build and Deploy
+on: 
+  push:
+jobs:
+  deploy:
+    name: Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Deploy docs
+        uses: mhausenblas/mkdocs-deploy-gh-pages@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          CUSTOM_DOMAIN: 
+            - torwiki.oyohyee.com
+          CONFIG_FILE: mkdocs.yml
+      - name: Sync to Gitee
+        uses: wearerequired/git-mirror-action@master
+        env:
+            SSH_PRIVATE_KEY: ${{ secrets.GITEE_PRIVATE_KEY }}
+        with:
+            source-repo: "git@torwiki/torwiki.github.com"
+            destination-repo: "git@gitee.com:torwiki/torwiki.git"

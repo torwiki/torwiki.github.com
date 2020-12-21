@@ -1,0 +1,83 @@
+site_name: Tor Wiki
+site_description: Tor Wiki 全球最大的中文匿名通信百科
+site_author: Tor Wiki Team
+# site_url: 
+strict: true
+
+
+extra:
+  search:
+    language: 'zh'
+  disqus: 'Tor-Wiki'
+  copyright: '<a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh">CC BY-SA 4.0</a> 和 <a href="https://github.com/zTrix/sata-license">SATA</a>'
+  pagetime: 'on'
+  # manifest: 'manifest.webmanifest'
+  # githash: ''
+  # notice:
+  #   title: 'Hi'
+  #   message: '欢迎点击这里对 OI Wiki 提一点建议'
+  #   url: 'https://wj.qq.com/s2/4467592/b1e9'
+  #   position: 'topCenter'
+  #   progressBar: false
+  #   timeout: false
+
+# Theme
+theme:
+  name: material
+  # custom_dir: 'mkdocs-material/material'
+  # static_templates:
+    # - 404.html
+  language: 'zh'
+  palette:
+    primary: 'deep purple'
+    accent: 'deep purple'
+  include_search_page: false
+  search_index_only: true
+  # favicon: 'https://cdn.jsdelivr.net/npm/oicdn@0.0.1/favicon.ico'
+  
+# plugins:
+  # - search
+
+  logo: '__static/onion.png'
+  feature:
+    tabs: true
+  font:
+    text: 'Fira Sans'
+    code: 'Fira Mono'
+
+extra_css:
+  - __static/stylesheets/extra.css
+extra_javascript:
+  - __static/javascripts/extra.js
+  - 'https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML'
+
+# extensions
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+      linenums: false
+  - toc:
+      permalink: true
+  - footnotes
+  - meta
+  - def_list
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_png
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist
+  - pymdownx.tilde
+
+nav:
+  - Tor:
+    - Tor 简介: tor/index.md
