@@ -79,5 +79,3 @@ markdown_extensions:
   - pymdownx.tilde
 
 nav:
-  - Tor:
-    - Tor 简介: tor/index.md
